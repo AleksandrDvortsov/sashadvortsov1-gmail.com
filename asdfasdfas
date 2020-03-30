@@ -1,0 +1,17 @@
+[33mcommit 541732a3b1b777e9a0f910d9c1716d98eeac50f1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Alex <sashadvortsov1@gmail.com>
+Date:   Mon Mar 30 12:47:07 2020 +0300
+
+    init reduser/app
+
+[33mcommit 429df24a2b08b760b596e6a473b057f95bb725a7[m
+Author: Alex <sashadvortsov1@gmail.com>
+Date:   Mon Mar 30 12:43:05 2020 +0300
+
+    creating template for app
+
+[33mcommit f47a8d73bda3e4fa3cdd43e7b96c9b18895a2592[m
+Author: Alex <sashadvortsov1@gmail.com>
+Date:   Mon Mar 30 12:31:51 2020 +0300
+
+    create react app
