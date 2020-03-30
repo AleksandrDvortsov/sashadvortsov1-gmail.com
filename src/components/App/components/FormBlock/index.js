@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import imgRed from './img/red.png';
 import imgGreen from './img/green.png';
 import { validationTimeDate } from '../../../App/service';
+import './style.scss';
 
 function FormBlock(props) {
 

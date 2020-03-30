@@ -8,29 +8,31 @@ function BlockServerTime(props) {
         NAME_STOCK, setData
     } = props;
 
-    const [isVisibleMenuTime, setIsVisibleMenuTime] = useState(false);
+    // const [isVisibleMenuTime, setIsVisibleMenuTime] = useState(false);
     const inputNumber = useRef(null);
 
     function listenerBtnDropDown() {
-        setIsVisibleMenuTime(!isVisibleMenuTime);
-        if (isVisibleMenuTime) {
-            let time = inputNumber.current.valueAsNumber;
-            if (isNaN(time)) return;
-            if (time < inputNumber.current.min || time > inputNumber.current.max) {
-                alert(`Value should be within ${inputNumber.current.min} - ${inputNumber.current.max}`);
-                return;
-            }
-            timeChangerToServer(time, NAME_STOCK, setData);
+        let time = inputNumber.current.valueAsNumber;
+        if (isNaN(time)) return;
+        if (time < inputNumber.current.min || time > inputNumber.current.max) {
+            alert(`Value should be within ${inputNumber.current.min} - ${inputNumber.current.max}`);
+            return;
         }
+        timeChangerToServer(time, NAME_STOCK, setData);
+
     }
-    
+
     return (
         <div id='menu'>
-            {!isVisibleMenuTime && <label className='btnDropDown' onClick={listenerBtnDropDown}>≣</label>}
-            {isVisibleMenuTime && <div><label className='btnDropDown' onClick={listenerBtnDropDown}>×</label>
-                <div id='time' className='time'><p>time respot to server</p>
-                    <input type="number" min='500' max='10000' step='500' ref={inputNumber} /> </div>
-            </div>}
+            <div className="card" tabindex="0">
+                <span className="card__infoicon">
+                    <p>≣</p>
+                </span>
+                <h1 className="card__title">time respot to server</h1>
+                <p className="card__credits">
+                    <input className="card__reference" type="number" min='500' max='10000' step='500' ref={inputNumber} onChange={listenerBtnDropDown} />
+                </p>
+            </div>
         </div>
     )
 }
