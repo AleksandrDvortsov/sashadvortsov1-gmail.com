@@ -1,7 +1,8 @@
 const initialState = {
     data: {
         name: 'test'
-    }
+    },
+    isServerError: false
 }
 
 export default function (state = initialState, action) {
@@ -11,6 +12,5 @@ export default function (state = initialState, action) {
             data: action.data
         }
     }
-
     return state;
 }

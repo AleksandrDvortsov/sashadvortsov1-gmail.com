@@ -1,11 +1,33 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import { timeChangerToServer } from '../../connectToServer/index';
 import './style.scss';
 
 function BlockServerTime() {
 
+    const [isVisibleMenuTime, setIsVisibleMenuTime] = useState(false);
+    const inputNumber = useRef(null);
+
+    function listenerBtnDropDown() {
+        setIsVisibleMenuTime(!isVisibleMenuTime);
+        if (isVisibleMenuTime) {
+            let time = inputNumber.current.valueAsNumber;
+            if (isNaN(time)) return;
+            if (time < inputNumber.current.min || time > inputNumber.current.max) {
+                alert(`Value should be within ${inputNumber.current.min} - ${inputNumber.current.max}`);
+                return;
+            }
+            timeChangerToServer(time);
+        }
+    }
     
     return (
-        <div>BlockServerTime</div>
+        <div id='menu'>
+            {!isVisibleMenuTime && <label className='btnDropDown' onClick={listenerBtnDropDown}>≣</label>}
+            {isVisibleMenuTime && <div><label className='btnDropDown' onClick={listenerBtnDropDown}>×</label>
+                <div id='time' className='time'><p>time respot to server</p>
+                    <input type="number" min='500' max='10000' step='500' ref={inputNumber} /> </div>
+            </div>}
+        </div>
     )
 }
 

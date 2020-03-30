@@ -5,7 +5,8 @@ function ServerError() {
 
     
     return (
-        <div>ServerError</div>
+        <div id='serverErr'>
+            Please make sure the server is running!!! ( At the potr 4000 )</div>
     )
 }
 
