@@ -4,7 +4,7 @@ import { isServerCorrectRespons } from '../service';
 let socket = null;
 
 export const myConnect = (stockSymbol, setData) => {
-    socket = io('http://localhost:4001');
+    socket = io('http://localhost:4000');
 
     socket.on('connect', () => {
         console.log('connected');

@@ -1,7 +1,7 @@
 import reducer from './reducer';
 
 describe('Test reducer.js', () => {
-    describe('Test Reducer', () => {
+    describe('Test set data', () => {
         const state = {
             data: {
                 name: 'test'

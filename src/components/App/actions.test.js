@@ -1,7 +1,7 @@
 import { setDataAction } from './actions'
 
 describe('Test actions.js', () => {
-    describe('Test actions', () => {
+    describe('Test SET_DATA', () => {
         it('Set data action', () => {
             const expectedAction = {
                 type: 'SET_DATA',

@@ -2,15 +2,19 @@ const initialState = {
     data: {
         name: 'test'
     },
-    isServerError: false
+    isServerError: true
 }
 
 export default function (state = initialState, action) {
-    if (action.type === 'SET_DATA') {
-        return {
-            ...state,
-            data: action.data
-        }
+    switch (action.type) {
+        case 'SET_DATA':
+            return {
+                ...state,
+                data: action.data
+            }
+    
+        default:
+            return state;
     }
-    return state;
+
 }

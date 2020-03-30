@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './style.scss';
 import { connect } from 'react-redux';
 import { myConnect } from './connectToServer';
@@ -15,12 +15,7 @@ function App(props) {
 
     useEffect(() => {
         myConnect('AAPL', setData);
-
     }, []);
-
-    useEffect(()=>{
-        console.log(data)
-    }, [data])
 
     return (
         <div >
