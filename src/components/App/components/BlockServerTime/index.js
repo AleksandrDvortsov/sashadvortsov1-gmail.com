@@ -2,7 +2,11 @@ import React, { useState, useRef } from 'react';
 import { timeChangerToServer } from '../../connectToServer/index';
 import './style.scss';
 
-function BlockServerTime() {
+function BlockServerTime(props) {
+
+    const {
+        NAME_STOCK, setData
+    } = props;
 
     const [isVisibleMenuTime, setIsVisibleMenuTime] = useState(false);
     const inputNumber = useRef(null);
@@ -16,7 +20,7 @@ function BlockServerTime() {
                 alert(`Value should be within ${inputNumber.current.min} - ${inputNumber.current.max}`);
                 return;
             }
-            timeChangerToServer(time);
+            timeChangerToServer(time, NAME_STOCK, setData);
         }
     }
     

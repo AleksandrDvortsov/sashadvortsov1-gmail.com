@@ -21,7 +21,7 @@ export const myConnect = (stockSymbol, setData) => {
     });
 };
 
-export const timeChangerToServer = (time) => {
-    // set time to server 
-    console.log('request tot server ', time)
+export const timeChangerToServer = (time, stockSymbol, setData) => {
+    socket.emit('setTime', time);
+    myConnect(stockSymbol, setData)
 } 

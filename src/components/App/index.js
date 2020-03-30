@@ -8,19 +8,21 @@ import BlockServerTime from './components/BlockServerTime';
 import FormBlock from './components/FormBlock';
 import ServerError from './components/ServerError';
 
+let NAME_STOCK = 'AAPL';
+
 function App(props) {
     const {
         data, setData
     } = props;
 
     useEffect(() => {
-        myConnect('AAPL', setData);
+        myConnect(NAME_STOCK, setData);
     }, []);
 
     return (
         <div >
             {data.ticker !== undefined ? <div id='myApp' >
-                <BlockServerTime />
+                <BlockServerTime NAME_STOCK={NAME_STOCK} setData={setData} />
                 <FormBlock data={data} />
             </div> : <ServerError />}
         </div>
