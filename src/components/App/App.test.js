@@ -1,5 +1,6 @@
 
 import reducer from './reducer';
+import { setDataAction } from './actions'
 
 describe('Test Reducer', () => {
     const state = {
@@ -59,6 +60,6 @@ describe('Test actions', () => {
             type: 'SET_DATA',
             data: { name: 'testName' }
         }
-        expect(setActionData(expectedAction.data)).toEqual(expectedAction)
+        expect(setDataAction(expectedAction.data)).toEqual(expectedAction)
     })
 })
